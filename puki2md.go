@@ -4,12 +4,12 @@ import (
 	"io"
 	"strings"
 
-	"github.com/miso24/puki2md/parser"
+	"github.com/miso24/puki2md/block"
 	"github.com/miso24/puki2md/renderer"
 )
 
 func Convert(r io.Reader) string {
-	p := parser.NewParser(r)
+	p := block.NewParser(r)
 	blocks := p.Parse()
 
 	var s strings.Builder
